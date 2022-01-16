@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body style="background-color: aliceblue">
+<br>
+<hr>
+<div class="container">
+    <h1 style="text-align: center">Employee Management System</h1><br>
+    <header style="align-content: space-evenly">
+        <a th:href="@{/addEmployee}">
+            <button class="btn btn-primary col-2"> Add Employee</button>
+        </a>
+        <a th:href="@{/all_employees}">
+            <button class="btn btn-primary col-2"> All Employees</button>
+        </a>
+    </header>
+</div>
+<hr>
+<div class="container">
+    <form th:action="@{/searchEmployee/by-street}" method="GET">
+        <label>Search Employee by Street: </label><input type="text" name="street"/>
+        <input type="submit"/>
+    </form>
+    <hr>
+    <form th:action="@{/searchEmployee/by-city}" method="GET">
+        <label>Search Employee by City: </label><input type="text" name="city"/>
+        <input type="submit"/>
+    </form>
+    <hr>
+    <form th:action="@{/searchEmployee/by-state}" method="GET">
+        <label>Search Employee by State: </label><input type="text" name="state"/>
+        <input type="submit"/>
+    </form>
+    <hr>
+    <form th:action="@{/searchEmployee/by-country}" method="GET">
+        <label>Search Employee by Country: </label><input type="text" name="country"/>
+        <input type="submit"/>
+    </form>
+</div>
+
+</body>
+</html>
